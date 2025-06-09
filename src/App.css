@@ -1,0 +1,13 @@
+.umn-heading {
+  font-family: 'Georgia', serif;
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 40px;
+  color: #7A0019;
+}
+.wordle-highlight {
+  color: #FFCC33;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
