@@ -2,12 +2,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-image: url("/assets/umn.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  backdrop-filter:  blur(4px);
-  background-color: #f9fafb;
+  background-color: #ffffff;
   color: #111;
   margin: 0;
   padding: 0;
