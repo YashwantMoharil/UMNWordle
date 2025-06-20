@@ -47,7 +47,6 @@ const Stats = ({ isOpen, onClose, currentAttempts, won }: StatsProps) => {
     : 0;
 
   // Calculate the maximum count for bar scaling
-  const maxCount = Math.max(...Object.values(stats.guessDistribution));
   const totalWins = Object.values(stats.guessDistribution).reduce((sum, count) => sum + count, 0);
 
   return (

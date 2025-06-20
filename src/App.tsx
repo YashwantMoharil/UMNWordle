@@ -2,7 +2,7 @@ import { useEffect, useState, lazy, Suspense } from 'react';
 import GameBoard from './components/GameBoard';
 import Keyboard from './components/KeyBoard';
 import LoadingSpinner from './components/LoadingSpinner';
-import './styles/keyboard.css';
+import './styles/KeyBoard.css';
 import './styles/ResultModal.css';
 import './App.css';
 
