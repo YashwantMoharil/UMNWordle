@@ -1,4 +1,4 @@
-import '../styles/tile.css';
+import '../styles/Tile.css';
 
 type TileProps = {
   letter: string;
