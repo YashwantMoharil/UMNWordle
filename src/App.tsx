@@ -157,6 +157,7 @@ function App() {
               gameOver: true
             }));
             setShowStats(true);
+            return;
           }
           setGameState(prev => ({
             ...prev,
@@ -196,14 +197,14 @@ function App() {
         </div>
       ) : (
         <>
-          <GameBoard 
-            board={gameState.board} 
-            statuses={gameState.statuses} 
-            flipMap={gameState.flipMap} 
+          <GameBoard
+            board={gameState.board}
+            statuses={gameState.statuses}
+            flipMap={gameState.flipMap}
           />
-          <Keyboard 
-            onKeyPress={handleKey} 
-            keyStatuses={gameState.keyStatuses} 
+          <Keyboard
+            onKeyPress={handleKey}
+            keyStatuses={gameState.keyStatuses}
           />
 
           {showHint && (
