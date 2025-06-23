@@ -1,8 +1,8 @@
-# UMN Wordle 🎓
+# UMN Wordle 
 
 A University of Minnesota-themed Wordle game built with React, TypeScript, and Vite. This game puts a UMN twist on the popular word-guessing game.
 
-## 🎮 Features
+## Features
 
 - **UMN-Themed Words**: Guess UMN-related words like building names, landmarks, and campus terms
 - **Daily Challenge**: New word every day
@@ -16,13 +16,7 @@ A University of Minnesota-themed Wordle game built with React, TypeScript, and V
 - **Keyboard Support**: Type your guesses or use the on-screen keyboard
 - **Beautiful Animations**: Smooth tile flips and color transitions
 
-
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by the original [Wordle](https://www.nytimes.com/games/wordle/index.html)
 - UMN colors and theme
