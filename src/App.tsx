@@ -5,6 +5,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 import './styles/KeyBoard.css';
 import './styles/ResultModal.css';
 import './App.css';
+import Header from './components/Header';
 
 // Lazy load the modals
 const ResultModal = lazy(() => import('./components/ResultModal'));
@@ -187,9 +188,12 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="umn-heading">
-        UMN <span className="wordle-highlight">Wordle</span>
-      </h1>
+      <Header/>
+      <div className="heading-wrapper">
+        <h1 className="umn-heading">
+          UMN <span className="wordle-highlight">Wordle</span>
+        </h1>
+      </div>
 
       {gameState.hasPlayedToday ? (
         <div style={{ textAlign: 'center', marginTop: '40px', fontSize: '22px' }}>

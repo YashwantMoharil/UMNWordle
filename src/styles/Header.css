@@ -1,0 +1,107 @@
+.header {
+    width: 100%;
+    height: 40px;
+    border: unset;
+    border: 2px solid #dfdfdf;
+    position: absolute;
+    top: -89px
+}
+
+.userName {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    left: 1615px;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+}
+
+.menuBtnHamburger {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    position: relative;
+    height: 20px;
+    width: auto;
+    left: 1740px;
+    top: -39px;
+    cursor: pointer;
+}
+
+.menuBtnCross {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    position: relative;
+    height: 29px;
+    width: auto;
+    left: 1735px;
+    top: -43px;
+    cursor: pointer;
+}
+
+.menuBtn:hover {
+    background-color: rgb(236, 230, 230);
+    transform: scale(1.05);
+}
+
+
+.sideMenu {
+    position: fixed;
+    top: -48px;
+    right: 0;
+    height: 185px;
+    width: 120px;
+    background-color: #ffffff;
+    /* darker for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 998;
+    box-shadow: -6px 0 16px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.3s ease;
+    /* green accent edge */
+}
+
+@keyframes slideIn {
+    from {
+        right: -260px;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+.sideMenu button {
+  width: 85%;
+  margin: 12px auto;
+  padding: 8px 12px;
+  background-color: #ebebeb;
+  color: #111;
+  border: 1.8px solid #333;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sideMenu button:hover {
+  background-color: #2c2f36;
+  color: #ffffff;
+  transform: scale(1.04);
+}
+
+
+.sideMenuHeader {
+    border-bottom: 2px solid #dfdfdf;
+    height: 42px;
+    width:100%;
+    top: 100px;
+    z-index: 999;
+
+}
