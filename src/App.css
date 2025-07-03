@@ -1,24 +1,27 @@
+
 .App {
-  position: relative;
-  transform: translate(0%, 12%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 4rem;
 }
 
-.heading-wrapper{
-   position: relative;
-   display: flex;
-   justify-content: center;
+.heading-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
+
 .umn-heading {
   font-family: 'Georgia', serif;
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
-  text-align: center;
-  margin-top: 40px;
   color: #7A0019;
-  position: absolute;
-  top: -2px;
-  transform: translate(0%, -100%);
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
+
 .wordle-highlight {
   color: #FFCC33;
   font-family: 'Inter', sans-serif;

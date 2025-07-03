@@ -1,78 +1,76 @@
 .header {
-    width: 100%;
-    height: 40px;
-    border: unset;
-    border: 2px solid #dfdfdf;
-    position: absolute;
-    top: -89px
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+  padding: 0 1rem;
+  border-bottom: 2px solid #dfdfdf;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
 .userName {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    left: 1615px;
-    font-family: 'Inter', sans-serif;
-    position: relative;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  padding-left: 5px;
+  color: #333;
 }
 
-.menuBtnHamburger {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    position: relative;
-    height: 20px;
-    width: auto;
-    left: 1740px;
-    top: -39px;
-    cursor: pointer;
+.menuBtnStats {
+  margin-left: auto;
+  padding-right: 25px;
+  height: 26px;
+  width: auto;
+  cursor: pointer;
 }
 
+.menuBtnLeaderBoard {
+  padding-right: 25px;
+  height: 27px;
+  width: auto;
+  cursor: pointer;
+}
+
+.menuBtnHamburger,
 .menuBtnCross {
-    display: flex;
-    padding: 10px;
-    align-items: center;
-    position: relative;
-    height: 29px;
-    width: auto;
-    left: 1735px;
-    top: -43px;
-    cursor: pointer;
+  height: 27px;
+  cursor: pointer;
+   padding-right: 5px;
+  transition: transform 0.2s ease;
 }
 
-.menuBtn:hover {
-    background-color: rgb(236, 230, 230);
-    transform: scale(1.05);
+.menuBtnHamburger:hover,
+.menuBtnCross:hover, .menuBtnStats:hover, .menuBtnLeaderBoard:hover {
+  transform: scale(1.1);
 }
 
 
 .sideMenu {
-    position: fixed;
-    top: -48px;
-    right: 0;
-    height: 185px;
-    width: 120px;
-    background-color: #ffffff;
-    /* darker for depth */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    z-index: 998;
-    box-shadow: -6px 0 16px rgba(0, 0, 0, 0.4);
-    animation: slideIn 0.3s ease;
-    /* green accent edge */
+  position: fixed;
+  top: 50px;
+  right: 0;
+  height: auto;
+  width: 140px;
+  background-color: #fff;
+  box-shadow: -6px 0 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 999;
+  animation: slideIn 0.3s ease;
 }
-
 @keyframes slideIn {
-    from {
-        right: -260px;
-        opacity: 0;
-    }
-
-    to {
-        right: 0;
-        opacity: 1;
-    }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
 }
 .sideMenu button {
   width: 85%;

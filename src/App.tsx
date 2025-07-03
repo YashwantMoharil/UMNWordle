@@ -5,7 +5,10 @@ import LoadingSpinner from './components/LoadingSpinner';
 import './styles/KeyBoard.css';
 import './styles/ResultModal.css';
 import './App.css';
+import './styles/GameBoard.css'
 import Header from './components/Header';
+import LoginUser from './components/LoginUser';
+
 
 // Lazy load the modals
 const ResultModal = lazy(() => import('./components/ResultModal'));
@@ -59,6 +62,9 @@ function App() {
 
   const [showStats, setShowStats] = useState(false);
   const [showHint] = useState(true);
+  //const token = cookies.get("token");
+  const [isAuth, setIsAuth] = useState(false);
+
 
   // Save game state to localStorage whenever it changes
   useEffect(() => {
@@ -181,26 +187,38 @@ function App() {
   };
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => handleKey(e.key);
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [gameState]);
+  const handleKeyDown = (e: KeyboardEvent) => {
+    const isInputFocused =
+      document.activeElement &&
+      ['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName);
+
+    if (!isInputFocused && isAuth) {
+      handleKey(e.key);
+    }
+  };
+
+  document.addEventListener('keydown', handleKeyDown);
+  return () => document.removeEventListener('keydown', handleKeyDown);
+}, [gameState, isAuth]);
 
   return (
     <div className="App">
-      <Header/>
+     
       <div className="heading-wrapper">
         <h1 className="umn-heading">
           UMN <span className="wordle-highlight">Wordle</span>
         </h1>
       </div>
-
-      {gameState.hasPlayedToday ? (
+      {!isAuth ? <LoginUser setIsAuth = {setIsAuth} /> : (
+        <>
+        <Header setIsAuth={setIsAuth}/>
+         {gameState.hasPlayedToday ? (
         <div style={{ textAlign: 'center', marginTop: '40px', fontSize: '22px' }}>
           You've already played today! Come back tomorrow.
         </div>
       ) : (
-        <>
+        <div className='gameBoard'>
+           
           <GameBoard
             board={gameState.board}
             statuses={gameState.statuses}
@@ -257,8 +275,11 @@ function App() {
               won={gameState.gameWon}
             />
           </Suspense>
+        </div>
+      )}
         </>
       )}
+     
     </div>
   );
 }
