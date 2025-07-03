@@ -209,7 +209,7 @@ function App() {
           UMN <span className="wordle-highlight">Wordle</span>
         </h1>
       </div>
-      {!isAuth ? <LoginUser setIsAuth = {setIsAuth} /> : (
+      {!isAuth && !gameState.hasPlayedToday ? <LoginUser setIsAuth = {setIsAuth} /> : (
         <>
         <Header setIsAuth={setIsAuth}/>
          {gameState.hasPlayedToday ? (
@@ -273,6 +273,7 @@ function App() {
               onClose={() => setShowStats(false)}
               currentAttempts={gameState.currentRow}
               won={gameState.gameWon}
+              isLoggedIn = {true}
             />
           </Suspense>
         </div>

@@ -1,3 +1,4 @@
+import Cookies from 'universal-cookie';
 import { useState } from 'react';
 import '../styles/LoginUser.css';
 
@@ -7,13 +8,27 @@ type loginUserProps = {
 };
 
 
-function LoginUser({setIsAuth }: loginUserProps) {
+function LoginUser({ setIsAuth }: loginUserProps) {
   const [login, setLogin] = useState(true);
+  const [userName, setUserName] = useState("");
+  const cookies = new Cookies();
 
-  const handleSubmit = (e : React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // prevent page reload
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsAuth(true);
   };
+
+  const createUser = () => {
+    // Authentication 
+    cookies.set("emailId", userName);
+  };
+
+  const authenticateUser = () => {
+    // Authentication 
+    cookies.set("emailId", userName);
+  };
+
+
 
   return (
     <>
@@ -22,7 +37,7 @@ function LoginUser({setIsAuth }: loginUserProps) {
           <div className="title">Login Form</div>
           <form onSubmit={handleSubmit}>
             <div className="field">
-              <input type="text" required />
+              <input type="text" required onChange={(event) => { setUserName(event.target.value) }} />
               <label>Email Address</label>
             </div>
             <div className="field">
@@ -30,7 +45,7 @@ function LoginUser({setIsAuth }: loginUserProps) {
               <label>Password</label>
             </div>
             <div className="field">
-              <input type="submit" value="Login" />
+              <input type="submit" value="Login" onClick={() => authenticateUser()} />
             </div>
             <div className="signup-link">
               Not a member?{" "}
@@ -45,7 +60,7 @@ function LoginUser({setIsAuth }: loginUserProps) {
           <div className="title">Sign Up</div>
           <form onSubmit={handleSubmit}>
             <div className="field">
-              <input type="text" required />
+              <input type="text" required onChange={(event) => { setUserName(event.target.value) }} />
               <label>User Name</label>
             </div>
             <div className="field">
@@ -57,7 +72,7 @@ function LoginUser({setIsAuth }: loginUserProps) {
               <label>Password</label>
             </div>
             <div className="field">
-              <input type="submit" value="Sign Up" />
+              <input type="submit" value="Sign Up" onClick={() => createUser()} />
             </div>
             <div className="signup-link">
               Already a member?{" "}

@@ -8,14 +8,15 @@ interface StatsProps {
   onClose: () => void;
   currentAttempts: number;
   won: boolean;
-  isLoggedIn : boolean
+  isLoggedIn : boolean;
 }
 
-const Stats = ({ isOpen, onClose, currentAttempts, won, isLoggedIn }: StatsProps) => {
-  console.log(isLoggedIn);
+const LeaderBoard = ({ isOpen, onClose, currentAttempts, won, isLoggedIn}: StatsProps) => {
+
   if(!isLoggedIn){
-    return <PlsLoginModal onClose={onClose} modal="your Stats"/>
+      return <PlsLoginModal onClose = {onClose} modal="the LeaderBoard"/>
   }
+
   const [stats, setStats] = useState<GameStats>(DEFAULT_STATS);
 
   useEffect(() => {
@@ -56,9 +57,10 @@ const Stats = ({ isOpen, onClose, currentAttempts, won, isLoggedIn }: StatsProps
   const totalWins = Object.values(stats.guessDistribution).reduce((sum, count) => sum + count, 0);
 
   return (
+    
     <div className="stats-modal">
       <div className="stats-content">
-        <h2>Statistics</h2>
+        <h2>Leader Board</h2>
         <div className="stats-grid">
           <div className="stat-box">
             <div className="stat-value">{stats.gamesPlayed}</div>
@@ -108,4 +110,4 @@ const Stats = ({ isOpen, onClose, currentAttempts, won, isLoggedIn }: StatsProps
   );
 };
 
-export default Stats; 
+export default LeaderBoard; 
